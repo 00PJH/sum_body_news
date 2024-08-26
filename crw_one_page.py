@@ -37,6 +37,10 @@ def filtering(contents):
 
     for content in contents:
         text = content.text.strip()
+        
+        # 특수 문자 포함된 불필요한 문장 필터링 (예: ★로 시작하는 문장)
+        if '★' in text :
+            continue  # 불필요한 내용이면 넘어감
 
         # 제목 및 언론사, 시간 추출
         match = re.search(pattern, text)
@@ -92,7 +96,7 @@ def insert_into_db(data):
     cursor.close()
 
 # 크롤링 URL
-url = "https://m.blog.naver.com/sj3589/223556348116?referrerCode=1"
+url = "https://m.blog.naver.com/sj3589/223560703851?referrerCode=1"
 
 # 크롤링 및 필터링
 news_contents = crawling(url)
@@ -117,8 +121,3 @@ db.close()
 # );
 # 이건 테이블 정의할 때
 
-CREATE TABLE news_summary (
-    title VARCHAR(255) PRIMARY KEY,
-    time VARCHAR(255),
-    body TEXT
-);
