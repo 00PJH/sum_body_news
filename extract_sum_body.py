@@ -9,8 +9,8 @@ from test_abssumm import newSum
 # MySQL 연결 설정
 db = pymysql.connect(
     host="localhost",
-    user="root",
-    password="1514",
+    user="",  # 자신의 db 이름
+    password="", # 자신의 db 비밀먼호
     database="news_db_one_page",
     charset="utf8mb4"
 )

@@ -3,7 +3,21 @@ import requests
 import pymysql
 import re
 
+
+# CREATE DATABASE news_db_one_page;
+
+# USE news_db_one_page;
+
+# CREATE TABLE news (
+#     title VARCHAR(255) PRIMARY KEY,
+#     newsroom VARCHAR(255),
+#     time VARCHAR(255),
+#     body TEXT
+# );
+# 이건 테이블 정의할 때
 # MySQL 연결 설정
+
+
 db = pymysql.connect(
     host="localhost",
     user="root",
@@ -109,15 +123,4 @@ insert_into_db(filtered_news)
 db.close()
 
 
-# CREATE DATABASE news_db_one_page;
-
-# USE news_db_one_page;
-
-# CREATE TABLE news (
-#     title VARCHAR(255) PRIMARY KEY,
-#     newsroom VARCHAR(255),
-#     time VARCHAR(255),
-#     body TEXT
-# );
-# 이건 테이블 정의할 때
 
